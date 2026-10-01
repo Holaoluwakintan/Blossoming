@@ -1,7 +1,0 @@
----
-import BaseLayout from '../layouts/BaseLayout.astro';
-const milestones = [['Early', 'BLOSSOM begins as an independent personal studio.', 'LIVE'], ['First Project', 'Creative work and the first digital foundations exist.', 'LIVE'], ['First Product', 'Bible Arena is being shaped as the flagship product.', 'BUILDING'], ['First Creative circle', 'The invitation is open to contributors and collaborators.', 'BUILDING'], ['First Partnership', 'A future area of work; no partnership is being claimed yet.', 'IDEA'], ['First Major Milestone', 'An upcoming marker to be defined by real work and impact.', 'IDEA'], ['Current Work', 'The digital studio, product lab and creative foundation are moving together.', 'BUILDING'], ['What Comes Next', 'Education, partnerships and new experiments remain on the horizon.', 'RESEARCH']];
----
-<BaseLayout title="The BLOSSOM Journey" description="Follow BLOSSOM from early through current work and what comes next.">
-  <main><section class="subpage-hero"><div class="section"><p class="eyebrow">The journey</p><h1>From first steps<br /><em>to what comes next.</em></h1><p>A record of what has happened, what is moving, and what remains ahead.</p></div></section><section class="section journey-list">{milestones.map(([title, copy, status], index) => <article class="journey-item"><span class={`roadmap-status status-${status.toLowerCase()}`}>{status}</span><span class="journey-index">0{index + 1}</span><div><h2>{title}</h2><p>{copy}</p></div></article>)}</section></main>
-</BaseLayout>
