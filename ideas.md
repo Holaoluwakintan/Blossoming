@@ -1,28 +1,9 @@
-# BLOSSOMING fresh site direction
+# BLOSSOM brand platform direction
 
-## Theme Name
-Signal & Story
+BLOSSOM is a brand in formation built around Faith, Technology and Innovation. It is not a personal portfolio. The public experience should make room for products, creative work, a visible journey and people who participate through community, volunteering and collaboration.
 
-## Intro
-A dark, polished personal studio for Olaoluwa Michael: editorial enough for books, precise enough for technology products, and warm enough for personal work.
+The interface takes cues from Expo's developer-platform clarity: a bright editorial canvas, compact sticky navigation, rounded product cards, clear status language, gradient moments, direct calls to action and a modular ecosystem structure. It keeps the restraint of the requested Apple-style quality without copying Apple.
 
-## Direction
-- **Movement:** restrained fade/slide reveals and soft transitions; no cursor-follow or shake effects.
-- **Principles:** clarity, proof over hype, strong hierarchy, generous spacing, honest product statuses.
-- **Color philosophy:** near-black ink, warm ivory, electric gold as the signature accent, muted blue for product depth.
-- **Layout paradigm:** full-bleed hero, compact sticky nav, editorial sections, product shelf, and focused detail panels.
-- **Signature elements:** uppercase mono labels, oversized serif headlines, gold rules, numbered cards, rounded media frames.
-- **Interaction:** direct navigation, visible CTAs, keyboard-friendly controls, reduced-motion fallback.
-- **Animation:** CSS-only reveal transitions with IntersectionObserver; no runtime animation dependency required for the first build.
-- **Typography:** Inter/system sans for utility and body, Georgia/serif for expressive display moments, monospace for metadata.
-- **Brand essence:** one personal studio, many things made carefully.
-- **Brand voice:** calm, confident, specific and honest.
-- **Wordmark:** BLOSSOMING with a simple gold four-petal mark rendered as an inline SVG.
-- **Signature color:** #E8C868.
+The visual system uses an off-white surface, near-black type, violet as the signature accent, blue and orange as product/ecosystem accents, DM Sans for utility, Instrument Serif for human emphasis and DM Mono for metadata. Motion remains restrained and reduced-motion friendly. The hero and community sections use compressed WebP photography as atmosphere, not as a claim about team size. Statuses remain honest: IDEA, PROTOTYPE, BUILDING, BETA and CURRENT.
 
-## Architecture
-- Plain React 18 + Vite.
-- Static client-side routes using the History API and a route-aware app shell.
-- No Astro, Supabase, server routes or imported product application runtimes.
-- Product cards link to the separate VoicePad, Bible Arena and Blossom Books repositories until public product URLs are available.
-- Vercel serves the Vite `dist` directory using the root `vercel.json` configuration.
+The app is plain React/Vite with static client-side routes. It has no Astro runtime, no Supabase dependency and no login requirement. Product pages link to the separate product repositories; community pathways use email until a real application backend is supplied.
