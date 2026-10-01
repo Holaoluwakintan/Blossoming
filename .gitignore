@@ -1,0 +1,15 @@
+node_modules/
+.netlify/
+dist/
+.env
+.env.*
+!.env.example
+
+.vercel/
+.vercel/
+dist/
+.astro/
+node_modules/
+.env
+.env.*
+!.env.example

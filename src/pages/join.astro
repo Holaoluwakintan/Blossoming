@@ -1,0 +1,7 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const ways = [['Collaborator', 'Follow projects, join conversations and stay connected to the journey.'], ['Contributor', 'Bring a skill, idea or resource to a project that needs it.'], ['Early collaborator', 'Take meaningful responsibility in shaping the culture, direction and work of BLOSSOM.'], ['Collaborator', 'Work with BLOSSOM on a specific project, experiment or initiative.']];
+---
+<BaseLayout title="Join BLOSSOM" description="Find your way into the BLOSSOM studio as a collaborator, contributor, early collaborator or collaborator.">
+  <main><section class="subpage-hero"><div class="section"><p class="eyebrow">The invitation</p><h1>Build BLOSSOM <em>with us.</em></h1><p>BLOSSOM is growing from a focused personal practice. I am looking for people who want to contribute to meaningful work.</p></div></section><section class="section"><div class="join-grid">{ways.map(([title, copy], index) => <article><span class="eyebrow">0{index + 1}</span><h2>{title}</h2><p>{copy}</p><a href={`mailto:michaelolaoluwag@gmail.com?subject=${encodeURIComponent(title + ' — BLOSSOM')}`} class="text-link">Start a conversation <span>→</span></a></article>)}</div><div class="join-callout"><div><p class="eyebrow">A simple first step</p><h2>Tell us what you want to build, learn or contribute.</h2></div><a href="mailto:michaelolaoluwag@gmail.com?subject=I want to join BLOSSOM" class="pill-button">Email the team →</a></div></section></main>
+</BaseLayout>

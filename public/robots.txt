@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /payment/
+Sitemap: https://blossom-website-phi.vercel.app/sitemap.xml

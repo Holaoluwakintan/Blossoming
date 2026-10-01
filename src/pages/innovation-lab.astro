@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { STATUS_VOCABULARY } from '../lib/content';
+const experiments = [{ name: 'The Ideas Room', type: 'Research / Concepts', status: 'RESEARCH', copy: 'A living archive for questions, prototypes and concepts before they become products.', href: '/building' }];
+---
+<BaseLayout title="Innovation Lab | BLOSSOM" description="Explore the research, prototypes, questions and concepts moving through the BLOSSOM Innovation Lab.">
+  <main><section class="subpage-hero"><div class="section subpage-hero-grid"><div><p class="eyebrow">Research / prototypes / concepts</p><h1>The Innovation <em>Lab.</em></h1><p>A place for better questions, early experiments and ideas that deserve room before they become products.</p></div><img class="subpage-media" src="/media/product-tech.webp" alt="Dark technology workspace representing the BLOSSOM Innovation Lab" loading="eager" width="2400" height="1029" /></div></section><section class="section roadmap-page"><div class="directory-toolbar"><p class="eyebrow">{experiments.length} active entry</p><div>{STATUS_VOCABULARY.slice(0, 4).map((status) => <span>{status}</span>)}</div></div><div class="roadmap-page-card"><span class="roadmap-status status-research">{experiments[0].status}</span><h2>{experiments[0].name}</h2><p>{experiments[0].copy}</p><a href={experiments[0].href} class="text-link">Explore the current lab record <span>→</span></a></div><div class="empty-state"><p class="eyebrow">More is coming.</p><p>This part of BLOSSOM is still being built. Follow the journey as new experiments become clear.</p><a href="/journal" class="text-link">Follow the journey <span>→</span></a></div></section></main>
+</BaseLayout>

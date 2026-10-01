@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const groups = [
+  { status: 'LIVE', label: 'What already exists.', items: [{ name: 'BLOSSOM Creative Work', type: 'Books + Stories', copy: 'Publishing, visual imagination and reflections that form the creative foundation.', href: '/books' }] },
+  { status: 'BUILDING', label: 'What is actively moving.', items: [{ name: 'Bible Arena', type: 'Faith + Technology', copy: 'A Bible-centered competitive learning platform.', href: '/products/bible-arena' }, { name: 'Digital Studio', type: 'Creative circle + Technology', copy: 'This evolving home for the studio, its products and its people.', href: '/products' }] },
+  { status: 'IDEA', label: 'What we are preparing.', items: [{ name: 'Education + Partnerships', type: 'Future direction', copy: 'Learning, collaboration and new ways for people and institutions to contribute. No active program is being claimed yet.', href: '/whats-next' }] },
+];
+---
+<BaseLayout title="What We're Building — BLOSSOM" description="Explore the built, building and next work moving through the BLOSSOM product lab.">
+  <main><section class="subpage-hero"><div class="section subpage-hero-grid"><div><p class="eyebrow">Innovation / product lab</p><h1>What we're <em>building.</em></h1><p>A truthful record of what is live, being built, researched and next. No inflated claims. No hidden stages.</p></div><img class="subpage-media" src="/media/studio-tech.webp" alt="Technology collaboration in a product studio" loading="eager" width="2400" height="1350" /></div></section><section class="section roadmap-page">{groups.map((group, index) => <section class="roadmap-block"><div class="roadmap-block-title"><span class={`roadmap-status status-${group.status.toLowerCase()}`}>{group.status}</span><h2>{group.label}</h2></div><div class="roadmap-block-items">{group.items.map((item) => <a href={item.href || '/whats-next'} class="roadmap-page-card"><span class="eyebrow">{item.type}</span><h3>{item.name}</h3><p>{item.copy}</p><span class="directory-arrow">↗</span></a>)}</div></section>)}</section></main>
+</BaseLayout>
