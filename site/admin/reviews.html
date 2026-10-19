@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Blossom reviews · admin</title>
+<style>body{font:15px/1.5 system-ui,sans-serif;background:#0b0a0c;color:#f6f1f3;margin:0;padding:20px;max-width:760px;margin:auto}input,button{font:inherit;border-radius:10px;border:1px solid #444;padding:10px 12px;background:#17141a;color:#fff}button{cursor:pointer;background:#f0648f;color:#14060b;font-weight:700;border:0}.r{border:1px solid #333;border-radius:14px;padding:14px;margin:10px 0}.r.h{opacity:.45}.r small{color:#a1979d}.b{display:flex;gap:8px;margin-top:8px}.b button{padding:6px 12px;font-size:13px}.g{background:#333;color:#fff}</style></head><body>
+<h1>Blossom reviews</h1><p>Hide a review to remove it from the public site (you can show it again). Delete removes it for good.</p>
+<p><input id="k" type="password" placeholder="Admin key" style="width:60%"> <button id="go">Open</button></p><div id="out"></div>
+<script>
+const k=document.getElementById('k'),out=document.getElementById('out');const qs=new URLSearchParams(location.hash.slice(1));if(qs.get('key'))localStorage.bk=qs.get('key'),history.replaceState(null,'',location.pathname);k.value=localStorage.bk||'';
+async function load(){localStorage.bk=k.value;const r=await fetch('/api/reviews?admin=1',{headers:{'x-admin-key':k.value},cache:'no-store'});const j=await r.json();out.textContent='';if(!j.reviews){out.textContent='Error';return}
+if(!j.reviews.length)out.textContent='No reviews yet.';
+j.reviews.forEach(v=>{const d=document.createElement('div');d.className='r'+(v.hidden?' h':'');const t=document.createElement('div');t.textContent=`${'★'.repeat(v.stars)} ${v.name} · ${v.app}${v.hidden?' · HIDDEN':''}`;const s=document.createElement('small');s.textContent=new Date(v.at).toLocaleString();const p=document.createElement('p');p.textContent=v.comment;const b=document.createElement('div');b.className='b';
+[[v.hidden?'show':'hide',v.hidden?'Show':'Hide'],['delete','Delete']].forEach(([a,l])=>{const x=document.createElement('button');x.textContent=l;if(a==='delete')x.className='g';x.onclick=async()=>{if(a==='delete'&&!confirm('Delete for good?'))return;await fetch('/api/reviews',{method:'POST',headers:{'Content-Type':'application/json','x-admin-key':k.value},body:JSON.stringify({action:a,id:v.id})});load()};b.append(x)});d.append(t,s,p,b);out.append(d)})}
+document.getElementById('go').onclick=load;if(k.value)load();
+</script></body></html>

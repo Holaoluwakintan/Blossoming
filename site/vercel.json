@@ -1,0 +1,63 @@
+{
+ "cleanUrls": true,
+ "headers": [
+  {
+   "source": "/assets/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=2592000, immutable"
+    }
+   ]
+  },
+  {
+   "source": "/(styles.css|main.js)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=86400"
+    }
+   ]
+  },
+  {
+   "source": "/admin/(.*)",
+   "headers": [
+    {
+     "key": "X-Robots-Tag",
+     "value": "noindex, nofollow"
+    },
+    {
+     "key": "Cache-Control",
+     "value": "no-store"
+    }
+   ]
+  },
+  {
+   "source": "/(.*)",
+   "headers": [
+    {
+     "key": "X-Content-Type-Options",
+     "value": "nosniff"
+    },
+    {
+     "key": "Referrer-Policy",
+     "value": "strict-origin-when-cross-origin"
+    }
+   ]
+  }
+ ],
+ "redirects": [
+  {
+   "source": "/download/ranti",
+   "destination": "https://ranti-ng.vercel.app/ranti.apk"
+  },
+  {
+   "source": "/download/voicepad",
+   "destination": "https://voicepadapp.vercel.app/voicepad.apk"
+  },
+  {
+   "source": "/download/bible-arena",
+   "destination": "https://bible-arena-app.vercel.app/bible-arena.apk"
+  }
+ ]
+}
